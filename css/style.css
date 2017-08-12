@@ -1,0 +1,12 @@
+body{
+	background-color: #eee;
+    @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+   font-family: 'Droid Arabic Kufi', serif;
+}
+.page-wrapper{
+width: 900px;	
+margin:5% auto;
+padding: 15px;
+background-color:white;
+box-shadow: 1px 1px 1px 1px black;
+}
