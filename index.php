@@ -15,6 +15,17 @@
    <style>
        body{
            font-family: 'Droid Arabic Kufi', sans-serif;
+           background-color: #E0E3EF;
+       }
+      @media only screen and (max-width: 768px) {
+           .fg{
+           margin-top:-45px;
+               float: right;
+       }
+          .hwd{
+              padding-top: 10px;
+              width: 100%;
+          }
        }
     </style>
 </head>
@@ -33,15 +44,8 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="home.php"></a>
             </div>
-            <div class="navbar-header">
-                <form class="navbar-form" method="POST"role="search" action="pages/login.php">
-					<div class="form-group">
-					<input type="text" class="form-control" name="username"placeholder="Username">
-					<input type="password" class="form-control" name="password"placeholder="Password">
-					</div>
-					<button type="submit" class="btn btn-success">Login</button>
-					</form>
-               
+            <div class="navbar-header fg navbar-right">
+                <a class="navbar-brand" href="home.php">نانوسوفت</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -51,7 +55,13 @@
                 </ul>
             -->
                 <div>
-					<a class="navbar-form navbar-right" style="font-size:25px;color:#fff;" href="home.php">نانوسوفت</a>
+					<form class="navbar-form navbar-left" method="POST"role="search" action="pages/login.php">
+					<div class="form-group">
+					<input type="text" class="form-control" name="username" placeholder="إسم المستخدم">
+					<input type="password" class="form-control" name="password" placeholder="الباسورد">
+					</div>
+					<button type="submit" class="btn btn-success">الدخول</button>
+					</form>
 				</div>
                 
             </div>
@@ -59,39 +69,30 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-			<div class="container" style="margin:8% auto;">
-				<div class="col-sm-6 col-md-5">
-					<form method="POST" class="form-signin" action="functions/register.php">
-								<h3 class="text-center">Signup Here!</h3>
-							<input type="text" name="fname"placeholder="First Name"class="form-control" required>
-							<input type="text" name="lname"placeholder="Last Name"class="form-control" required>
-							<select class="form-control" name="gender"required>
-								<option>Gender</option>
-								<option value="Male">Male</option>
-								<option value="Female">Female</option>
-							</select>
-							<input type="text" placeholder="Username" name="username"class="form-control" required>
-							<input type="password" placeholder="Password" name="password" class="form-control" required>
-							<input type="submit" value="Signup" class="btn btn-success" style="width:100%;">
-						</form>
+			<div class="container" style="margin:4% auto;">
+				<div class="col-sm-5 col-md-5 pull-right"><br><br>
+					<h3>أصبحت تقنيات مايكروسوفت أكثر وضوحا</h3>
+					<p>
+                        نانوسوفت هي منصة تبادل خبرات في كل ما يخص عالم برمجة و تطوير بإستخدام تقنيات مايروسوفت، مستوحاة من الطريقة التي تفكر بها. و من المشاكل إلى إجابات، يمكنك مشاركة معرفتك مع العالم  
+                    </p>
+                    <img style="width:100%;" src="./images/bg.png" />
 				</div>
-				 <div class="col-sm-5 col-md-4 pull-right">
-                   <div class="row">
-                   
-                       <h2>Discuss with your friends</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.لا شكر فكلنا إخوة في الله
-نعملا شكر فكلنا إخوة في الله
-نعملا شكر فكلنا إخوة في الله
-نعملا شكر فكلنا إخوة في الله
-نعملا شكر فكلنا إخوة في الله
-نعم</p>
-                       
-						
+				 <div class="col-sm-8 col-md-5 pull-left">
+                   <div class="row hwd">
+                 
+						<form method="POST" class="form-signin" action="functions/register.php">
+								<h3 class="text-center">قم بالتسجيل من هنا </h3>
+							<input type="text" name="fname"placeholder="الإسم"class="form-control" required>
+							<input type="text" name="lname"placeholder="اللقب"class="form-control" required>
+							<select class="form-control" name="gender"required>
+								<option>الجنس</option>
+								<option value="Male">ذكر</option>
+								<option value="Female">أنثا</option>
+							</select>
+							<input type="text" placeholder="إسم المستخدم" name="username"class="form-control" required>
+							<input type="password" placeholder="الباسورد" name="password" class="form-control" required>
+							<input type="submit" value="التسجيل" class="btn btn-success" style="width:100%;">
+						</form>
 				</div>
 			</div>
 		</div>
@@ -99,9 +100,8 @@
     <div class="footer">
 		<nav align="center">
 			<ul class="nav navbar-nav">
-				<li><a href="">About</a></li>
-				<li><a href="">Developers</a></li>
-				<li><a href="">Terms and Conditions</a></li>
+				<li><a href="">عن الفريق</a></li>
+				<li><a href="">الأحكام والشروط</a></li>
 			</ul>
 		</nav>
 	</div>
