@@ -11,7 +11,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+    font-family: 'Droid Arabic Kufi', sans-serif;
 }
 article,
 aside,
@@ -2122,8 +2122,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-success {
   color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #E4205A;
+  border-color: #D12071;
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -2131,8 +2131,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
   color: #fff;
-  background-color: #47a447;
-  border-color: #398439;
+  background-color: #D01951;
+  border-color: ##E4205A;
 }
 .btn-success:active,
 .btn-success.active,
@@ -2154,11 +2154,11 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #E4205A;
+  border-color: #D12071;
 }
 .btn-success .badge {
-  color: #5cb85c;
+  color: #E4205A;
   background-color: #fff;
 }
 .btn-info {
@@ -4010,7 +4010,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #ccc;
+    color: #fff;
     background-color: transparent;
   }
 }
@@ -4021,11 +4021,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #333;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: #303CA2;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #999;
+  color: #fff;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4298,7 +4298,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #3071a9;
 }
 .label-success {
-  background-color: #5cb85c;
+  background-color: #E4205A;
 }
 .label-success[href]:hover,
 .label-success[href]:focus {
@@ -4546,7 +4546,7 @@ a.thumbnail.active {
           animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {
-  background-color: #5cb85c;
+  background-color: #E4205A;
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
