@@ -10,7 +10,7 @@ $username=$_SESSION['username'];
 $userid = $_SESSION['user_Id'];
 
 ?>
-<html>
+<html dir="rtl" lang="ar">
 <head>
 	<title></title>
 
@@ -18,14 +18,28 @@ $userid = $_SESSION['user_Id'];
 	<link rel="stylesheet" type="text/css" href="../css/global.css">
 	<!--Bootstrap CSS-->
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-
+	
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
     <!--Script-->
     <script src="../js/jquery.js"></script>
-    <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+     <style>
+       body{
+           font-family: 'Droid Arabic Kufi', sans-serif;
+           background-color: #E0E3EF;
+       }
+      @media only screen and (max-width: 768px) {
+           .fg{
+           margin-top:-45px;
+               float: right;
+       }
+          .hwd{
+              padding-top: 10px;
+              width: 100%;
+          }
+       }
+    </style>
 </head>
 <body>
 	<!-- Navigation -->
@@ -42,19 +56,15 @@ $userid = $_SESSION['user_Id'];
                 </button>
                 <a class="navbar-brand page-scroll" href="home.php"></a>
             </div>
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">NanoSoft</a>
+            <div class="navbar-header fg navbar-right">
+                <a class="navbar-brand" href="home.php">نانوسوفت</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
-
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="#quest"> Post a Question</a></li>
-                </ul>
-     				
-					 <ul class="nav navbar-nav navbar-right">
+					 <ul class="nav navbar-nav navbar-left">
+                         <li ><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> الخروج</a></li>
                          <li><a href="#" ><span class="glyphicon glyphicon-user"></span> <?php echo $username;?></a></li>
-                        <li ><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                          <li><a href="#quest"> إطرح سؤال </a></li>
                 
                 </ul>		
 			
@@ -65,7 +75,7 @@ $userid = $_SESSION['user_Id'];
         <!-- /.container-fluid -->
     </nav>
     <div class="container" style="margin:7% auto;">
-    	<h4>Latest Discussion</h4>
+    	<h4>آخر مناقشة</h4>
     	<hr>
         <?php  include "../functions/db.php";
 
@@ -79,9 +89,9 @@ $userid = $_SESSION['user_Id'];
                     <div class="panel-body">
                     <table class="table table-stripped">
                     <tr>
-                    <th>Topic title</th>
-                    <th>Category</th>
-                    <th>Action</th>
+                    <th><font style="float:right;">السؤال</font></th>
+                    <th><font style="float:right;">الفئة</font></th>
+                    <th><font style="float:right;">عمل</font></th>
                     </tr>';
                     $sel1 = mysql_query("SELECT * from tblpost where cat_id='$cat_id' ");
                     while($row1=mysql_fetch_assoc($sel1)){
@@ -89,7 +99,7 @@ $userid = $_SESSION['user_Id'];
                         echo '<tr>';
                         echo '<td>'.$title.'</td>';
                         echo '<td>'.$category.'</td>';
-                        echo '<td><a href="content.php?post_id='.$post_Id.'"><button class="btn btn-success">View</button></td>';
+                        echo '<td><a href="content.php?post_id='.$post_Id.'"><button class="btn btn-success">شاهد</button></td>';
                         echo '</tr>';
                     }
 
@@ -103,7 +113,7 @@ $userid = $_SESSION['user_Id'];
             <div> 
                 <form method="POST" action="question-function.php">
                         
-                         <label>Category</label>
+                         <label>الفئة</label>
                         <select name="category" class="form-control">
                             <option></option>
                             <?php $sel = mysql_query("SELECT * from category");
@@ -116,21 +126,29 @@ $userid = $_SESSION['user_Id'];
                                 }
                             ?>
                         </select>
-                        <label>Topic Title</label>
+                        <label>السؤال</label>
                         <input type="text" class="form-control" name="title"required>
-                        <label>Content</label>
+                        <label>أكتر توضيحا</label>
                         <textarea name="content"class="form-control">
                         </textarea>
                        <br>
                         <input type="hidden" name="userid" value=<?php echo $userid; ?>>
-                        <input type="submit" class="btn btn-success pull-right" value="Post">
+                        <input type="submit" class="btn btn-success pull-right" value=" إطرح السؤال">
                    </form><br>
                 <hr>
-                  <a href="" class="pull-right">Close</a>
+                  <a href="" class="pull-right">إغلق</a>
               </div>
         </div>
 
-
+<hr>
+    <div class="footer">
+		<nav align="center">
+			<ul class="nav navbar-nav">
+				<li><a href="">عن الفريق</a></li>
+				<li><a href="">الأحكام والشروط</a></li>
+			</ul>
+		</nav>
+	</div>
 
 </body>
 </html>

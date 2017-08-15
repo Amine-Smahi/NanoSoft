@@ -10,7 +10,7 @@ $username=$_SESSION['username'];
 $userid = $_SESSION['user_Id'];
 
 ?>
-<html>
+<html dir="rtl" lang="ar">
 <head>
 	<title></title>
 
@@ -18,14 +18,28 @@ $userid = $_SESSION['user_Id'];
 	<link rel="stylesheet" type="text/css" href="../css/global.css">
 	<!--Bootstrap CSS-->
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-
+	
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
     <!--Script-->
     <script src="../js/jquery.js"></script>
-    <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+      <style>
+       body{
+           font-family: 'Droid Arabic Kufi', sans-serif;
+           background-color: #E0E3EF;
+       }
+      @media only screen and (max-width: 768px) {
+           .fg{
+           margin-top:-45px;
+               float: right;
+       }
+          .hwd{
+              padding-top: 10px;
+              width: 100%;
+          }
+       }
+    </style>
 
 </head>
 <body>
@@ -43,22 +57,18 @@ $userid = $_SESSION['user_Id'];
                 </button>
                 <a class="navbar-brand page-scroll" href="home.php"></a>
             </div>
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">NanoSoft</a>
+           <div class="navbar-header fg navbar-right">
+                <a class="navbar-brand" href="home.php">نانوسوفت</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse">
-
-                <ul class="nav navbar-nav navbar-left">
-                    <li><a href="#quest"> Post a Question</a></li>
-                </ul>
-     				 <ul class="nav navbar-nav navbar-right">
-				 <ul class="nav navbar-nav navbar-right">
+           <div class="collapse navbar-collapse">
+					 <ul class="nav navbar-nav navbar-left">
+                         <li ><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> الخروج</a></li>
                          <li><a href="#" ><span class="glyphicon glyphicon-user"></span> <?php echo $username;?></a></li>
-                        <li ><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                          <li><a href="#quest"> إطرح سؤال </a></li>
                 
-                </ul>   
-               
+                </ul>		
+			
                 
             </div>
             <!-- /.navbar-collapse -->
@@ -66,7 +76,7 @@ $userid = $_SESSION['user_Id'];
         <!-- /.container-fluid -->
     </nav>
     <div class="container" style="margin:7% auto;">
-    	<h4>Latest Discussion</h4>
+    	<h4>آخر مناقشة</h4>
     	<hr>
          <div class="panel panel-success">
                 <div class="panel-heading">
@@ -101,7 +111,7 @@ $userid = $_SESSION['user_Id'];
                        echo "<label>Topic Category: </label> ".$category."<br>";
                        echo "<label>Date time posted: </label> ".$datetime;
                        echo "<p class='well'>".$content."</p>";
-                       echo '<label>Posted By: </label>'.$fname.' '.$lname;
+                       echo $fname.' '.$lname.'<label> :Posted By</label>';
                       }
                       
                     }
@@ -114,7 +124,7 @@ $userid = $_SESSION['user_Id'];
                     
               ?>
 
-              <br><label>Comments</label><br>
+              <br><label>التعليقات</label><br>
               <div id="comments">
               <?php 
               $postid= $_GET['post_id'];
@@ -135,12 +145,12 @@ $userid = $_SESSION['user_Id'];
           </div>
           <hr>
             <div class="col-sm-5 col-md-5 sidebar">
-          <h3>Comment</h3>
+          <h3>تعليق</h3>
           <form method="POST">
             <textarea type="text" class="form-control" id="commenttxt"></textarea><br>
             <input type="hidden" id="postid" value="<?php echo $_GET['post_id']; ?>">
             <input type="hidden" id="userid" value="<?php echo $_SESSION['user_Id']; ?>">
-            <input type="submit" id="save" class="btn btn-success pull-right" value="Comment">
+            <input type="submit" id="save" class="btn btn-success pull-right" value="إرسال">
           </form>
         </div>
     </div>
@@ -149,26 +159,35 @@ $userid = $_SESSION['user_Id'];
             <div> 
                 <form method="POST" action="question-function.php">
                         
-                         <label>Category</label>
+                         <label>الفئة</label>
                         <select name="category" class="form-control">
                             <option></option>
                             <option value="Programming">Programming</option>
                             <option value="Multimedia">Multimedia</option>
                             <option value="Computer Networking">Computer Networking</option>
                         </select>
-                        <label>Topic Title</label>
+                        <label>السؤال</label>
                         <input type="text" class="form-control" name="title"required>
-                        <label>Content</label>
+                        <label>أكتر توضيحا</label>
                         <textarea name="content"class="form-control">
-
                         </textarea>
                        <br>
-                        <input type="submit" class="btn btn-success pull-right" value="Post">
+                        <input type="hidden" name="userid" value=<?php echo $userid; ?>>
+                        <input type="submit" class="btn btn-success pull-right" value=" إطرح السؤال">
                    </form><br>
                 <hr>
-                  <a href="" class="pull-right">Close</a>
+                  <a href="" class="pull-right">إغلق</a>
               </div>
         </div>
+        <hr>
+    <div class="footer">
+		<nav align="center">
+			<ul class="nav navbar-nav">
+				<li><a href="">عن الفريق</a></li>
+				<li><a href="">الأحكام والشروط</a></li>
+			</ul>
+		</nav>
+	</div>
 </body>
 <script>
 
