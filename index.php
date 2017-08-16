@@ -58,7 +58,7 @@
 					<form class="navbar-form navbar-left" method="POST"role="search" action="pages/login.php">
 					<div class="form-group">
 					<input type="text" class="form-control" name="username" placeholder="إسم المستخدم">
-					<input type="password" class="form-control" name="password" placeholder="الباسورد">
+					<input type="password" class="form-control" name="password" placeholder="كلمة المرور">
 					</div>
 					<button type="submit" class="btn btn-success">الدخول</button>
 					</form>
@@ -90,7 +90,7 @@
 								<option value="Female">أنثا</option>
 							</select>
 							<input type="text" placeholder="إسم المستخدم" name="username"class="form-control" required>
-							<input type="password" placeholder="الباسورد" name="password" class="form-control" required>
+							<input type="password" placeholder="كلمة المرور" name="password" class="form-control" required>
 							<input type="submit" value="التسجيل" class="btn btn-success" style="width:100%;">
 						</form>
 				</div>

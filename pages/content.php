@@ -107,11 +107,11 @@ $userid = $_SESSION['user_Id'];
                       $sel =@mysql_query("SELECT * from tbluser where user_Id='$user_Id' ");
                       while($row=mysql_fetch_assoc($sel)){
                         extract($row);
-                        echo "<label>Topic Title: </label> ".$title."<br>";
-                       echo "<label>Topic Category: </label> ".$category."<br>";
-                       echo "<label>Date time posted: </label> ".$datetime;
+                        echo "<label>السؤال: </label> ".$title."<br>";
+                       echo "<label>فئة السؤال: </label> ".$category."<br>";
+                       echo "<label>تاريخ طرح السؤال: </label> ".$datetime;
                        echo "<p class='well'>".$content."</p>";
-                       echo $fname.' '.$lname.'<label> :Posted By</label>';
+                       echo '<label>  صاحب الإستفسار : </label>'.$fname.' '.$lname;
                       }
                       
                     }
@@ -132,7 +132,7 @@ $userid = $_SESSION['user_Id'];
               $num =@mysql_num_rows($sql);
               if($num>0){
               while($row=mysql_fetch_assoc($sql)){
-                    echo "<label>Comment by: </label> ".$row['fname']." ".$row['lname']."<br>";
+                    echo "<label>تعليق من: </label> ".$row['fname']." ".$row['lname']."<br>";
                      echo '<label class="pull-right">'.$row['datetime'].'</label>';
                      echo "<p class='well'>".$row['comment']."</p>";
               }
