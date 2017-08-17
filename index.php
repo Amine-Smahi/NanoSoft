@@ -62,7 +62,7 @@
 					</div>
 					<button type="submit" class="btn btn-success">الدخول</button>
 					</form>
-				</div>
+				</div><
                 
             </div>
             <!-- /.navbar-collapse -->
@@ -90,8 +90,12 @@
 								<option value="Female">أنثا</option>
 							</select>
 							<input type="text" placeholder="إسم المستخدم" name="username"class="form-control" required>
-							<input type="password" placeholder="كلمة المرور" name="password" class="form-control" required>
-							<input type="submit" value="التسجيل" class="btn btn-success" style="width:100%;">
+							<input id="pwd" type="password" placeholder="كلمة المرور" name="password" class="form-control" required>
+                            <input id="pwd2" type="password" placeholder="إعادة كلمة المرور"  class="form-control" required>
+							<div id="sub">
+                                <p id="wrn"></p>
+                                <input onmouseover="chk(this)" type="submit" value="التسجيل" class="btn btn-success" style="width:100%;">
+                                </div>
 						</form>
 				</div>
 			</div>
@@ -105,6 +109,23 @@
 			</ul>
 		</nav>
 	</div>
-
+<script>
+function chk(x) {
+  var pw =  document.getElementById('pwd').value;
+    var pw2 = document.getElementById('pwd2').value;
+    if(pw != pw2){
+        document.getElementById('sub').innerHTML = '<input onmouseover="chk(this)" value="هناك خطأ في المعلومات" class="btn btn-danger" style="width:100%;">';   
+    }
+    else{
+        if(document.getElementById('pwd').value.length < 6){
+             document.getElementById('sub').innerHTML = '<input onmouseover="chk(this)" value="هناك خطأ في المعلومات" class="btn btn-danger" style="width:100%;">';  
+        }
+        else{
+       document.getElementById('sub').innerHTML = '<input onmouseover="chk(this)"  type="submit" value="التسجيل" class="btn btn-success" style="width:100%;">';
+            }
+   
+    }
+}
+</script>
 </body>
 </html>
